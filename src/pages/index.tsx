@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
 const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
-  const siteTitle = data.site?.siteMetadata?.title || `Title`;
+  const siteTitle = data.site?.siteMetadata?.title;
   const posts = data.allMarkdownRemark.nodes;
 
   if (posts.length === 0) {

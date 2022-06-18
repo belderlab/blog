@@ -2663,6 +2663,7 @@ type SiteFieldsEnum =
   | 'port'
   | 'siteMetadata.author.name'
   | 'siteMetadata.author.summary'
+  | 'siteMetadata.copyright'
   | 'siteMetadata.description'
   | 'siteMetadata.siteUrl'
   | 'siteMetadata.social.twitter'
@@ -3417,6 +3418,7 @@ type SitePluginSortInput = {
 
 type SiteSiteMetadata = {
   readonly author: Maybe<Author>;
+  readonly copyright: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly social: Maybe<Social>;
@@ -3425,6 +3427,7 @@ type SiteSiteMetadata = {
 
 type SiteSiteMetadataFilterInput = {
   readonly author: InputMaybe<AuthorFilterInput>;
+  readonly copyright: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly social: InputMaybe<SocialFilterInput>;

@@ -19,11 +19,7 @@ const BlogPostTemplate = ({
         title={post?.frontmatter?.title}
         description={post?.frontmatter?.description || post?.excerpt}
       />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <article itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
           <p>{post?.frontmatter?.date}</p>
@@ -35,7 +31,7 @@ const BlogPostTemplate = ({
         <hr />
         <footer>Footer</footer>
       </article>
-      <nav className="blog-post-nav">
+      <nav>
         <ul
           style={{
             display: `flex`,

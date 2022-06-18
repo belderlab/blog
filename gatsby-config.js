@@ -1,7 +1,8 @@
 module.exports = {
   graphqlTypegen: true,
   siteMetadata: {
-    title: `DatPayments Blog`,
+    title: `Blog`,
+    copyright: "DatPayments",
     author: {
       name: `DatPayments Technical`,
       summary: `who lives and works in San Francisco building useful things.`,
