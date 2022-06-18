@@ -1,8 +1,9 @@
 module.exports = {
+  graphqlTypegen: true,
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `DatPayments Blog`,
     author: {
-      name: `Kyle Mathews`,
+      name: `DatPayments Technical`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,

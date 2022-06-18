@@ -6,12 +6,28 @@
  */
 
 import * as React from "react";
-import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const Seo = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+type Meta = React.DetailedHTMLProps<
+  React.MetaHTMLAttributes<HTMLMetaElement>,
+  HTMLMetaElement
+>[];
+
+type Props = {
+  description?: Queries.Maybe<string>;
+  lang?: Queries.Maybe<string>;
+  meta?: Meta;
+  title?: Queries.Maybe<string>;
+};
+
+const Seo = ({
+  description = "",
+  lang,
+  meta = [],
+  title = "DatPayments Blog",
+}: Props) => {
+  const { site } = useStaticQuery<Queries.Query>(
     graphql`
       query {
         site {
@@ -27,65 +43,53 @@ const Seo = ({ description, lang, meta, title }) => {
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const metaDescription = description || site?.siteMetadata?.description;
+  const defaultTitle = site?.siteMetadata?.title;
+  const resultMeta: Meta = [
+    {
+      name: `description`,
+      content: metaDescription || undefined,
+    },
+    {
+      property: `og:title`,
+      content: title || undefined,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription || undefined,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: site?.siteMetadata?.social?.twitter || ``,
+    },
+    {
+      name: `twitter:title`,
+      content: title || undefined,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription || undefined,
+    },
+  ];
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: lang || "en",
       }}
-      title={title}
+      title={title || undefined}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      meta={resultMeta.concat(meta || [])}
     />
   );
-};
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-};
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 };
 
 export default Seo;
