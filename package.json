@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@types/react": "^18.0.14",
     "@types/react-helmet": "^6.1.5",
     "framer-motion": "^6.3.11",
     "gatsby": "^4.16.0",
@@ -59,5 +60,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  }
+  },
+  "packageManager": "yarn@3.2.1"
 }
