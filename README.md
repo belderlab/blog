@@ -2,7 +2,12 @@ Blogging template with gatsby
 
 Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
-# TODO
+## Dependencies
+
+- Node > 16.10
+- yarn v2 - [berry](https://yarnpkg.com/getting-started/install)
+
+## TODO
 
 - [ ] POST sorting by date
 - [ ] Post Rendering
