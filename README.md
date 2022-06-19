@@ -9,9 +9,9 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
 ## TODO
 
-- [ ] POST sorting by date
-- [ ] Post Rendering
 - [ ] Static pages with github pages
 - [ ] Author component
-- [ ] Reading time -> words / 250
 - [ ] Navbar ModuleFederation
+- [ ] Add https://github.com/garmeeh/next-seo
+- [ ] Add share buttons https://github.com/nygardk/react-share
+- [ ] Add simple "like" API with nextJS

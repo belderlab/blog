@@ -7,6 +7,7 @@ import {
   Container,
   Heading,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 
@@ -18,6 +19,7 @@ type Props = {
 
 const Layout = ({ location, title, children }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const footerColor = useColorModeValue("blackAlpha.600", "whiteAlpha.500");
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
 
@@ -46,7 +48,7 @@ const Layout = ({ location, title, children }: Props) => {
       <Box as="main" my="12">
         {children}
       </Box>
-      <Box as="footer" mt="12">
+      <Box as="footer" mt="12" mb="12" color={footerColor}>
         © {new Date().getFullYear()}, {data.site?.siteMetadata?.copyright}
         <br />
         <Link href="https://github.com/fastup-kit" textDecoration="underline">

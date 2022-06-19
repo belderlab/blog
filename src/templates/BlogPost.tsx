@@ -5,7 +5,9 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
-import { Box, Button } from "@chakra-ui/react";
+import { components } from "../components/Components";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { StaticImage } from "gatsby-plugin-image";
 
 const BlogPostTemplate = ({
   data,
@@ -22,22 +24,37 @@ const BlogPostTemplate = ({
         description={post?.frontmatter?.description || post?.excerpt}
       />
       <article itemScope itemType="http://schema.org/Article">
-        <header>
-          <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
-          <p>{post?.frontmatter?.date}</p>
-        </header>
-        <MDXProvider
-          components={{
-            Button: Button,
-            Box: Box,
-          }}
-        >
+        <Box as="header" mt="14" mb="8">
+          <Flex mb="4">
+            <Box mr="4">
+              <StaticImage
+                src="../images/profile-pic.png"
+                alt=""
+                height={48}
+                style={{
+                  borderRadius: "50%",
+                }}
+                role="none"
+              />
+            </Box>
+            <Box>
+              <Text fontSize="md">{data.site?.siteMetadata?.author?.name}</Text>
+              <Text>
+                {post?.frontmatter?.date} · {post?.timeToRead} min read
+              </Text>
+            </Box>
+          </Flex>
+          <Heading as="h1" size="2xl" itemProp="headline">
+            {post?.frontmatter?.title}
+          </Heading>
+        </Box>
+        <MDXProvider components={components}>
           <section itemProp="articleBody">
             {post?.body && <MDXRenderer>{post.body}</MDXRenderer>}
           </section>
         </MDXProvider>
-        <hr />
-        <footer>Footer</footer>
+        <Box mt="16" mb="8" as="hr" color="red.500" />
+        {/* <footer>Footer</footer> */}
       </article>
       <nav>
         <ul
@@ -80,6 +97,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        author {
+          name
+        }
       }
     }
     mdx(id: { eq: $id }) {
@@ -91,6 +111,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      timeToRead
     }
     previous: mdx(id: { eq: $previousPostId }) {
       slug
