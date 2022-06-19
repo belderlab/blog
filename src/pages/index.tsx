@@ -4,10 +4,11 @@ import { Link, graphql, PageProps } from "gatsby";
 // import Bio from "../components/Bio";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { Box, Heading } from "@chakra-ui/react";
 
 const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
   const siteTitle = data.site?.siteMetadata?.title;
-  const posts = data.allMarkdownRemark.nodes;
+  const posts = data.allMdx.nodes;
 
   if (posts.length === 0) {
     return (
@@ -27,22 +28,23 @@ const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
       <Seo title="All posts" />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
-          const title = post?.frontmatter?.title || post?.fields?.slug;
+          const title = post?.frontmatter?.title || post?.slug;
 
           return (
-            <li key={post?.fields?.slug}>
-              <article
-                className="post-list-item"
+            <li key={post?.slug}>
+              <Box
+                as="article"
+                my="12"
                 itemScope
                 itemType="http://schema.org/Article"
               >
-                {post?.fields?.slug && (
+                {post?.slug && (
                   <header>
-                    <h2>
-                      <Link to={post?.fields?.slug} itemProp="url">
+                    <Heading as="h1" size="xl" mb="2">
+                      <Link to={post?.slug} itemProp="url">
                         <span itemProp="headline">{title}</span>
                       </Link>
-                    </h2>
+                    </Heading>
                     <small>{post?.frontmatter?.date}</small>
                   </header>
                 )}
@@ -55,7 +57,7 @@ const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
                     itemProp="description"
                   />
                 </section>
-              </article>
+              </Box>
             </li>
           );
         })}
@@ -73,12 +75,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
-        fields {
-          slug
-        }
+        slug
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title

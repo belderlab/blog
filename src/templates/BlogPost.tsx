@@ -1,15 +1,17 @@
 import * as React from "react";
 import { Link, graphql, PageProps } from "gatsby";
 
-// import Bio from "../components/Bio";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+import { Box, Button } from "@chakra-ui/react";
 
 const BlogPostTemplate = ({
   data,
   location,
 }: PageProps<Queries.BlogPostBySlugQuery>) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const siteTitle = data.site?.siteMetadata?.title || `Title`;
   const { previous, next } = data;
 
@@ -24,10 +26,16 @@ const BlogPostTemplate = ({
           <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
           <p>{post?.frontmatter?.date}</p>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post?.html || "" }}
-          itemProp="articleBody"
-        />
+        <MDXProvider
+          components={{
+            Button: Button,
+            Box: Box,
+          }}
+        >
+          <section itemProp="articleBody">
+            {post?.body && <MDXRenderer>{post.body}</MDXRenderer>}
+          </section>
+        </MDXProvider>
         <hr />
         <footer>Footer</footer>
       </article>
@@ -42,15 +50,15 @@ const BlogPostTemplate = ({
           }}
         >
           <li>
-            {previous && previous?.fields?.slug && (
-              <Link to={previous?.fields?.slug} rel="prev">
+            {previous && previous?.slug && (
+              <Link to={`/${previous?.slug}`} rel="prev">
                 ← {previous?.frontmatter?.title}
               </Link>
             )}
           </li>
           <li>
-            {next && next?.fields?.slug && (
-              <Link to={next?.fields?.slug} rel="next">
+            {next && next?.slug && (
+              <Link to={`/${next?.slug}`} rel="next">
                 {next?.frontmatter?.title} →
               </Link>
             )}
@@ -74,28 +82,24 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         description
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
+    previous: mdx(id: { eq: $previousPostId }) {
+      slug
       frontmatter {
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
+    next: mdx(id: { eq: $nextPostId }) {
+      slug
       frontmatter {
         title
       }
