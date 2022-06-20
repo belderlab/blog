@@ -1,5 +1,6 @@
 module.exports = {
   graphqlTypegen: true,
+  pathPrefix: "/blog",
   siteMetadata: {
     title: `Blog`,
     copyright: "DatPayments",
@@ -7,7 +8,7 @@ module.exports = {
       name: `DatPayments Technology`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://fastup-kit.github.io/blog/`,
     social: {
       twitter: `kylemathews`,
     },

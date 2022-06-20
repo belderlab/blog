@@ -9,9 +9,10 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
 ## TODO
 
-- [ ] Static pages with github pages
-- [ ] Author component
-- [ ] Navbar ModuleFederation
+- [ ] Styles for 404 page
+- [ ] Restyling main page
+- [ ] Local images processing
 - [ ] Add https://github.com/garmeeh/next-seo
 - [ ] Add share buttons https://github.com/nygardk/react-share
 - [ ] Add simple "like" API with nextJS
+- [ ] ModuleFederation

@@ -2419,13 +2419,10 @@ type Query_siteArgs = {
   host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
-  jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   pathPrefix: InputMaybe<StringQueryOperatorInput>;
-  polyfill: InputMaybe<BooleanQueryOperatorInput>;
   port: InputMaybe<IntQueryOperatorInput>;
   siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
-  trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -2531,13 +2528,10 @@ type Site = Node & {
   readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
-  readonly jsxRuntime: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly pathPrefix: Maybe<Scalars['String']>;
-  readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly port: Maybe<Scalars['Int']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
-  readonly trailingSlash: Maybe<Scalars['String']>;
 };
 
 
@@ -2849,7 +2843,6 @@ type SiteFieldsEnum =
   | 'internal.mediaType'
   | 'internal.owner'
   | 'internal.type'
-  | 'jsxRuntime'
   | 'parent.children'
   | 'parent.children.children'
   | 'parent.children.children.children'
@@ -2889,15 +2882,13 @@ type SiteFieldsEnum =
   | 'parent.parent.parent.children'
   | 'parent.parent.parent.id'
   | 'pathPrefix'
-  | 'polyfill'
   | 'port'
   | 'siteMetadata.author.name'
   | 'siteMetadata.copyright'
   | 'siteMetadata.description'
   | 'siteMetadata.siteUrl'
   | 'siteMetadata.social.twitter'
-  | 'siteMetadata.title'
-  | 'trailingSlash';
+  | 'siteMetadata.title';
 
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
@@ -2906,13 +2897,10 @@ type SiteFilterInput = {
   readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
-  readonly jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly pathPrefix: InputMaybe<StringQueryOperatorInput>;
-  readonly polyfill: InputMaybe<BooleanQueryOperatorInput>;
   readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
-  readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteFunction = Node & {
