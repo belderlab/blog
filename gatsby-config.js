@@ -49,6 +49,28 @@ module.exports = {
       options: {
         extensions: [`.mdx`, ".md"],
         JSFrontmatterEngine: true,
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 630,
+              linkImagesToOriginal: false,
+              quality: 95,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-zoom`,
+            options: {
+              background: "rgba(0,0,0,0.66)",
+            },
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,

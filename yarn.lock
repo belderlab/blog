@@ -9752,6 +9752,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-remark-images-zoom@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "gatsby-remark-images-zoom@npm:1.1.0"
+  dependencies:
+    medium-zoom: ^1.0.4
+  peerDependencies:
+    gatsby: ^2.0.0
+    gatsby-remark-images: ^3.0.0
+  checksum: edb22eafd0237871ffa6f2eb5db5db450572cd291ad8d10d6308bff07a0c4c012be6eb0c68138ae09d2bef20c6df3174af6807fc17ffb251633ce0a1162bb77e
+  languageName: node
+  linkType: hard
+
 "gatsby-remark-images@npm:^6.16.0":
   version: 6.16.0
   resolution: "gatsby-remark-images@npm:6.16.0"
@@ -9786,20 +9798,6 @@ __metadata:
   peerDependencies:
     gatsby: ^4.0.0-next
   checksum: c2078f34b268c59d6f54f5349872753becdd889b948dc3d8c746ee9d4912fd7707dcc164f303cff2a7b66dd2e469b547fb07868874253edb22257564ed9fcec5
-  languageName: node
-  linkType: hard
-
-"gatsby-remark-smartypants@npm:^5.16.0":
-  version: 5.16.0
-  resolution: "gatsby-remark-smartypants@npm:5.16.0"
-  dependencies:
-    "@babel/runtime": ^7.15.4
-    retext: ^7.0.1
-    retext-smartypants: ^4.0.0
-    unist-util-visit: ^2.0.3
-  peerDependencies:
-    gatsby: ^4.0.0-next
-  checksum: de9eb58a6db5e221866e7ede5a748142a04ecbc5ae0703f95293e4ab0f58b97c26bcd1b32c4cd411a86f5da889a2cc32adbadb43b22f8e4189c1b681e6629401
   languageName: node
   linkType: hard
 
@@ -9869,8 +9867,8 @@ __metadata:
     gatsby-plugin-react-helmet: ^5.16.0
     gatsby-plugin-sharp: ^4.16.1
     gatsby-remark-images: ^6.16.0
+    gatsby-remark-images-zoom: ^1.1.0
     gatsby-remark-responsive-iframe: ^5.16.0
-    gatsby-remark-smartypants: ^5.16.0
     gatsby-source-filesystem: ^4.16.0
     gatsby-transformer-remark: ^5.16.0
     gatsby-transformer-sharp: ^4.16.0
@@ -12913,6 +12911,13 @@ __metadata:
   version: 0.3.0
   resolution: "media-typer@npm:0.3.0"
   checksum: af1b38516c28ec95d6b0826f6c8f276c58aec391f76be42aa07646b4e39d317723e869700933ca6995b056db4b09a78c92d5440dc23657e6764be5d28874bba1
+  languageName: node
+  linkType: hard
+
+"medium-zoom@npm:^1.0.4":
+  version: 1.0.6
+  resolution: "medium-zoom@npm:1.0.6"
+  checksum: 728b9f661262fd084da26f401ffe9bf98afc6d14ad93d4bfb08b95d32f9c4494a97dc8cb3a62353e8d350dc09c84a3f6f686a0fec321bfb609e5ba5e24bdb9d2
   languageName: node
   linkType: hard
 
@@ -16146,46 +16151,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"retext-latin@npm:^2.0.0":
-  version: 2.0.4
-  resolution: "retext-latin@npm:2.0.4"
-  dependencies:
-    parse-latin: ^4.0.0
-    unherit: ^1.0.4
-  checksum: bd549099bcfa0b420e87ba985d2f53333f8aaff006ae0222b8cdfc87dd19f981495c07f90c5bca006ff34a515ccbdc862c21f9d2c2467363160d4adc5c8684dc
-  languageName: node
-  linkType: hard
-
-"retext-smartypants@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "retext-smartypants@npm:4.0.0"
-  dependencies:
-    nlcst-to-string: ^2.0.0
-    unist-util-visit: ^2.0.0
-  checksum: a959ea698568ed5db71337fc341513e685c1b45bc5b38c76d5822fc16d61daaa7b49b8c8f4c6255781e9c173a7e89a6db68a5a7dc9a6cea4370f060aed4da045
-  languageName: node
-  linkType: hard
-
-"retext-stringify@npm:^2.0.0":
-  version: 2.0.4
-  resolution: "retext-stringify@npm:2.0.4"
-  dependencies:
-    nlcst-to-string: ^2.0.0
-  checksum: 20109430b74d1817d95c8eca6b426370d2659a327c0bd06ba48ed6f347f25a0c5669e7338e9eb58065c8a11e87a82a9f0b0af6d45dabcbe30a8cebd49246fd60
-  languageName: node
-  linkType: hard
-
-"retext@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "retext@npm:7.0.1"
-  dependencies:
-    retext-latin: ^2.0.0
-    retext-stringify: ^2.0.0
-    unified: ^8.0.0
-  checksum: 98dccbb6e421bc07900dcbb3b4f180329b8b0051ccd25c60a016f0dcea87f6b21245ddd6395f3ddc819a692b74b92b04b2077ba401b5c9f410f6da06111c60d5
-  languageName: node
-  linkType: hard
-
 "retry@npm:^0.12.0":
   version: 0.12.0
   resolution: "retry@npm:0.12.0"
@@ -17919,7 +17884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unified@npm:^8.0.0, unified@npm:^8.4.2":
+"unified@npm:^8.4.2":
   version: 8.4.2
   resolution: "unified@npm:8.4.2"
   dependencies:
