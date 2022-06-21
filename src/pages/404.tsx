@@ -1,18 +1,43 @@
 import * as React from "react";
 import { graphql, PageProps } from "gatsby";
 
-import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import NotFoundGif from "../images/404.gif";
+import styled from "@emotion/styled";
+import { Link as RouterLink } from "@reach/router";
 
-const NotFoundPage = ({ data, location }: PageProps<Queries.Query>) => {
-  const siteTitle = data.site?.siteMetadata?.title;
+const NotFound = styled.img`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+`;
 
+const NotFoundPage = () => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <>
       <Seo title="404: Not Found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Layout>
+      <Flex height="100vh">
+        <Flex
+          flexDir="column"
+          mt={["10", "10", ""]}
+          justifyContent={["", "", "center"]}
+          alignItems="center"
+          w="100%"
+        >
+          <Box>
+            <Heading mb="4">404: Not Found</Heading>
+            <Text mb="4">
+              You just hit a page that doesn&#39;t exist... the sadness.
+            </Text>
+            <Link as={RouterLink} to="/">
+              <Button>Go Back to Home</Button>
+            </Link>
+          </Box>
+        </Flex>
+        <NotFound src={NotFoundGif} width="300px" />
+      </Flex>
+    </>
   );
 };
 
