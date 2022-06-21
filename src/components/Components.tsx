@@ -15,26 +15,26 @@ export const components = {
   Button,
   Box,
   h1: (props: any) => (
-    <Heading mb="-6" mt="16" as="h1" size="xl" noOfLines={1} {...props} />
+    <Heading mt="10" mb="6" as="h1" size="xl" noOfLines={1} {...props} />
   ),
   h2: (props: any) => (
-    <Heading mb="-6" mt="16" as="h2" size="lg" noOfLines={1} {...props} />
+    <Heading mt="8" mb="4" as="h2" size="lg" noOfLines={1} {...props} />
   ),
-  h3: (props: any) => <Heading mb="2" mt="8" as="h3" size="md" {...props} />,
-  h4: (props: any) => <Heading mb="2" mt="8" as="h4" size="sm" {...props} />,
-  h5: (props: any) => <Heading mb="2" mt="8" as="h5" size="xs" {...props} />,
-  h6: (props: any) => <Heading mb="2" mt="8" as="h6" size="xs" {...props} />,
-  li: (props: any) => <ListItem {...props} />,
-  ul: (props: any) => <UnorderedList ml="8" {...props} />,
-  ol: (props: any) => <OrderedList ml="8" {...props} />,
+  h3: (props: any) => <Heading mt="6" mb="3" as="h3" size="md" {...props} />,
+  h4: (props: any) => <Heading mt="5" mb="3" as="h4" size="sm" {...props} />,
+  h5: (props: any) => <Heading mt="5" mb="3" as="h5" size="sm" {...props} />,
+  h6: (props: any) => <Heading mt="5" mb="3" as="h6" size="sm" {...props} />,
+  li: (props: any) => <ListItem fontSize="lg" {...props} />,
+  ul: (props: any) => <UnorderedList fontSize="lg" ml="8" {...props} />,
+  ol: (props: any) => <OrderedList fontSize="lg" ml="8" {...props} />,
   a: (props: any) => <Link {...props} color="blue.400" />,
   blockquote: (props: any) => {
     const color = useColorModeValue("blackAlpha.400", "whiteAlpha.400");
     return (
       <Box p="4" my="4" borderLeft="4px solid" borderLeftColor={color}>
-        <Text {...props} />
+        <Text my="-2" {...props} />
       </Box>
     );
   },
-  p: (props: any) => <Text mt="10" fontSize="lg" {...props} />,
+  p: (props: any) => <Text my="2" fontSize="lg" {...props} />,
 };
