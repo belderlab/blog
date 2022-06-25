@@ -10,6 +10,10 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 ## TODO
 
 - [ ] Restyling main page
+  - [ ] Main Article
+  - [ ] Side articels
+  - [ ] Tags
+- [ ] Adaptive layout (Mobile/Tablet)
 - [ ] Add https://github.com/garmeeh/next-seo
 - [ ] Add share buttons https://github.com/nygardk/react-share
 - [ ] Add simple "like" API with nextJS
@@ -17,11 +21,11 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
 ## Inspiration
 
-https://restream.io/blog/
-https://retool.com/blog/explorer/
-https://blog.clubhouse.com/
-https://blog.close.com/
-https://blog.duolingo.com/
-https://vanschneider.com/blog/
-https://aliabdaal.com/
-https://medium.com/
+- https://restream.io/blog/
+- https://retool.com/blog/explorer/
+- https://blog.clubhouse.com/
+- https://blog.close.com/
+- https://blog.duolingo.com/
+- https://vanschneider.com/blog/
+- https://aliabdaal.com/
+- https://medium.com/
