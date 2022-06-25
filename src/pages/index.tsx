@@ -11,6 +11,12 @@ const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
   const siteTitle = data.site?.siteMetadata?.title;
   const posts = data.allMdx.nodes;
 
+  console.log({ posts });
+  const favoriteArticle = React.useMemo(
+    () => posts.find((post) => post.frontmatter?.favorite === true),
+    [posts]
+  );
+
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -27,8 +33,8 @@ const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
   return (
     <>
       <Layout location={location} title={siteTitle}>
-        <TopArticle />
         <Seo title="All posts" />
+        {favoriteArticle && <TopArticle article={favoriteArticle} />}
         <ol style={{ listStyle: `none` }}>
           {posts.map((post) => {
             const title = post?.frontmatter?.title || post?.slug;
@@ -87,6 +93,15 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          favorite
+          tag
+          heroImageFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          heroImageAlt
+          heroImageLink
         }
       }
     }

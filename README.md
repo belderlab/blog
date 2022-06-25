@@ -13,6 +13,7 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
   - [ ] Main Article
   - [ ] Side articels
   - [ ] Tags
+- [ ] CI/CD for auto building pages
 - [ ] Adaptive layout (Mobile/Tablet)
 - [ ] Add https://github.com/garmeeh/next-seo
 - [ ] Add share buttons https://github.com/nygardk/react-share
