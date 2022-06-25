@@ -9,10 +9,12 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
 ## TODO
 
-- [ ] Restyling main page
-  - [ ] Main Article
-  - [ ] Side articels
-  - [ ] Tags
+- [ ] Cross Posting from other sources
+- [ ] Add intgration via CI/CD - publish new content in social
+  - [ ] Telegram Channel
+  - [ ] Twitter
+  - [ ] RSS Mailchimp
+- [ ] Add simple theme configuration
 - [ ] CI/CD for auto building pages
 - [ ] Adaptive layout (Mobile/Tablet)
 - [ ] Add https://github.com/garmeeh/next-seo

@@ -13,35 +13,32 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "@reach/router";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { PostInfo } from "./PostInfo";
 
 type Props = {
-  article: Queries.Mdx;
+  post: Queries.Mdx;
 };
 
-export function TopArticle({ article }: Props) {
+export function TopPost({ post }: Props) {
   const imgFile =
-    article.frontmatter?.heroImageFile?.childImageSharp?.gatsbyImageData;
-  const imgLink = article.frontmatter?.heroImageLink;
-  const title = article.frontmatter?.title;
-  const description = article.frontmatter?.description;
-  const tag = article.frontmatter?.tag;
-  const link = article.slug || "";
+    post.frontmatter?.heroImageFile?.childImageSharp?.gatsbyImageData;
+  const imgLink = post.frontmatter?.heroImageLink;
+  const title = post.frontmatter?.title;
+  const description = post.frontmatter?.description;
+  const link = post.slug || "";
 
   return (
     <Grid templateColumns="1fr 1fr" gap="8" bg="">
       <Box>
         <Link as={RouterLink} to={link}>
-          <Box rounded="xl">
+          <Box rounded="xl" overflow="hidden">
             {imgLink && (
-              <Image
-                src={imgLink}
-                alt={article.frontmatter?.heroImageAlt || ""}
-              />
+              <Image src={imgLink} alt={post.frontmatter?.heroImageAlt || ""} />
             )}
             {!imgLink && imgFile && (
               <GatsbyImage
                 image={imgFile}
-                alt={article.frontmatter?.heroImageAlt || ""}
+                alt={post.frontmatter?.heroImageAlt || ""}
               />
             )}
           </Box>
@@ -54,11 +51,7 @@ export function TopArticle({ article }: Props) {
           </Heading>
         </Link>
         {description && <Text fontSize="xl">{description}</Text>}
-        <Box>
-          {tag && <Tag>{tag}</Tag>}
-          {tag && " · "}
-          25 Jun, 2022 · 6 min read
-        </Box>
+        <PostInfo post={post} />
       </Flex>
     </Grid>
   );
