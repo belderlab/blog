@@ -7,22 +7,13 @@ type Props = {
 
 export function PostInfo({ post }: Props) {
   const bg = useColorModeValue("gray.300", "whiteAlpha.200");
-  const color = useColorModeValue("white", "white");
   const tag = post.frontmatter?.tag;
   const timeToRead = post?.timeToRead || 0;
 
   return (
     <Box>
       {tag && (
-        <Text
-          px="1.5"
-          py="1"
-          as="span"
-          fontSize="sm"
-          bg={bg}
-          // color="white"
-          rounded="md"
-        >
+        <Text px="1.5" py="1" as="span" fontSize="sm" bg={bg} rounded="md">
           {tag}
         </Text>
       )}

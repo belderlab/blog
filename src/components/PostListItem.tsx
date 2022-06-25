@@ -1,6 +1,7 @@
-import { Box, Heading } from "@chakra-ui/react";
-import { Link } from "gatsby";
+import { Box, Heading, Text, Link } from "@chakra-ui/react";
+import { Link as RouterLink } from "@reach/router";
 import React from "react";
+import { PostInfo } from "./PostInfo";
 
 type Props = {
   post: Queries.Mdx;
@@ -8,27 +9,23 @@ type Props = {
 
 export function PostListItem({ post }: Props) {
   const title = post?.frontmatter?.title || post?.slug;
+  const description = post?.frontmatter?.description || post.excerpt;
 
   return (
     <li key={post?.slug}>
       <Box as="article" my="12" itemScope itemType="http://schema.org/Article">
         {post?.slug && (
-          <header>
-            <Heading as="h1" size="xl" mb="2">
-              <Link to={post?.slug} itemProp="url">
+          <Box as="header" mb="2">
+            <Heading as="h3" size="xl" mb="2">
+              <Link as={RouterLink} to={post?.slug} itemProp="url">
                 <span itemProp="headline">{title}</span>
               </Link>
             </Heading>
-            <small>{post?.frontmatter?.date}</small>
-          </header>
+            <PostInfo post={post} />
+          </Box>
         )}
         <section>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: post?.frontmatter?.description || post.excerpt || "",
-            }}
-            itemProp="description"
-          />
+          <Text itemProp="description">{description}</Text>
         </section>
       </Box>
     </li>

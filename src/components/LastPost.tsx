@@ -17,7 +17,6 @@ type Props = {
 
 export function LastPost({ post }: Props) {
   const color = useColorModeValue("blackAlpha.50", "whiteAlpha.100");
-
   const imgFile =
     post.frontmatter?.heroImageFile?.childImageSharp?.gatsbyImageData;
   const imgLink = post.frontmatter?.heroImageLink;
