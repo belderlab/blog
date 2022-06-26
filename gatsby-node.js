@@ -69,8 +69,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: blogPost,
       context: {
         id: post.id,
-        previousPostId: previous?.id,
-        nextPostId: next?.id,
+        previousPostId: previous?.id || null,
+        nextPostId: next?.id || null,
       },
     });
   });
