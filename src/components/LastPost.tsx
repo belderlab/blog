@@ -1,13 +1,6 @@
-import {
-  Box,
-  Heading,
-  Image,
-  Link,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Heading, Image, Link, useColorModeValue } from "@chakra-ui/react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { Link as RouterLink } from "@reach/router";
+import { Link as RouterLink } from "gatsby";
 import React from "react";
 import { PostInfo } from "./PostInfo";
 

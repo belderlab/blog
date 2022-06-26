@@ -1,11 +1,10 @@
 import * as React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link as RouterLink } from "gatsby";
 
 import Seo from "../components/Seo";
 import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import NotFoundGif from "../images/404.gif";
 import styled from "@emotion/styled";
-import { Link as RouterLink } from "@reach/router";
 
 const NotFound = styled.img`
   position: absolute;

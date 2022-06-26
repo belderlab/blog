@@ -1,17 +1,6 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  Heading,
-  Image,
-  Img,
-  Link,
-  Tag,
-  Text,
-} from "@chakra-ui/react";
-import { Link as RouterLink } from "@reach/router";
+import { Box, Flex, Grid, Heading, Image, Link, Text } from "@chakra-ui/react";
+import { Link as RouterLink } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { PostInfo } from "./PostInfo";
 

@@ -1,6 +1,5 @@
 import * as React from "react";
-import { graphql, Link as GatsbyLink, useStaticQuery } from "gatsby";
-import { WindowLocation } from "@reach/router";
+import { graphql, Link as GatsbyLink, PageProps, useStaticQuery } from "gatsby";
 import {
   Box,
   Button,
@@ -12,7 +11,7 @@ import {
 import { Link } from "@chakra-ui/react";
 
 type Props = {
-  location: WindowLocation<unknown>;
+  location: PageProps<Queries.Query>["location"];
   title?: Queries.Maybe<string>;
   children?: React.ReactNode;
 };
