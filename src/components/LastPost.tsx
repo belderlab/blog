@@ -13,7 +13,7 @@ export function LastPost({ post }: Props) {
   const imgFile =
     post.frontmatter?.heroImageFile?.childImageSharp?.gatsbyImageData;
   const imgLink = post.frontmatter?.heroImageLink;
-  const link = post.slug || "";
+  const link = `/${post.slug}` || "";
 
   return (
     <Box
@@ -71,4 +71,3 @@ export function LastPost({ post }: Props) {
     </Box>
   );
 }
-// background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
