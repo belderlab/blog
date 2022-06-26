@@ -1,6 +1,30 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+function getOtherPost(posts, currentIndex) {
+  let previous;
+  let next;
+
+  for (let i = currentIndex + 1; i < posts.length; i++) {
+    if (!posts[i].frontmatter.hidden) {
+      next = posts[i];
+      break;
+    }
+  }
+
+  for (let i = currentIndex - 1; i > 0; i--) {
+    if (!posts[i].frontmatter.hidden) {
+      previous = posts[i];
+      break;
+    }
+  }
+
+  return {
+    previous,
+    next,
+  };
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
@@ -18,6 +42,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nodes {
             id
             slug
+            frontmatter {
+              hidden
+            }
           }
         }
       }
@@ -40,17 +67,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id;
-      const nextPostId =
-        index === posts.length - 1 ? null : posts[index + 1].id;
+      const { previous, next } = getOtherPost(posts, index);
 
       createPage({
         path: post.slug,
         component: blogPost,
         context: {
           id: post.id,
-          previousPostId,
-          nextPostId,
+          previousPostId: previous?.id,
+          nextPostId: next?.id,
         },
       });
     });
@@ -85,6 +110,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      favorite: Boolean
+      tag: String
+      heroImageLink: String
+      heroImageFile: File
+      heroImageAlt: String
+      hidden: Boolean
     }
 
     type Fields {

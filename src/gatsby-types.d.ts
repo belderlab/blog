@@ -721,6 +721,7 @@ type FileFieldsEnum =
   | 'childMdx.frontmatter.heroImageFile.sourceInstanceName'
   | 'childMdx.frontmatter.heroImageFile.uid'
   | 'childMdx.frontmatter.heroImageLink'
+  | 'childMdx.frontmatter.hidden'
   | 'childMdx.frontmatter.tag'
   | 'childMdx.frontmatter.title'
   | 'childMdx.headings'
@@ -892,6 +893,7 @@ type FileFieldsEnum =
   | 'childrenMdx.frontmatter.heroImageFile.sourceInstanceName'
   | 'childrenMdx.frontmatter.heroImageFile.uid'
   | 'childrenMdx.frontmatter.heroImageLink'
+  | 'childrenMdx.frontmatter.hidden'
   | 'childrenMdx.frontmatter.tag'
   | 'childrenMdx.frontmatter.title'
   | 'childrenMdx.headings'
@@ -1143,6 +1145,12 @@ type FloatQueryOperatorInput = {
 type Frontmatter = {
   readonly date: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly favorite: Maybe<Scalars['Boolean']>;
+  readonly heroImageAlt: Maybe<Scalars['String']>;
+  readonly heroImageFile: Maybe<File>;
+  readonly heroImageLink: Maybe<Scalars['String']>;
+  readonly hidden: Maybe<Scalars['Boolean']>;
+  readonly tag: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
 };
 
@@ -1157,6 +1165,12 @@ type Frontmatter_dateArgs = {
 type FrontmatterFilterInput = {
   readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly favorite: InputMaybe<BooleanQueryOperatorInput>;
+  readonly heroImageAlt: InputMaybe<StringQueryOperatorInput>;
+  readonly heroImageFile: InputMaybe<FileFilterInput>;
+  readonly heroImageLink: InputMaybe<StringQueryOperatorInput>;
+  readonly hidden: InputMaybe<BooleanQueryOperatorInput>;
+  readonly tag: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -1795,6 +1809,91 @@ type MarkdownRemarkFieldsEnum =
   | 'fields.slug'
   | 'frontmatter.date'
   | 'frontmatter.description'
+  | 'frontmatter.favorite'
+  | 'frontmatter.heroImageAlt'
+  | 'frontmatter.heroImageFile.absolutePath'
+  | 'frontmatter.heroImageFile.accessTime'
+  | 'frontmatter.heroImageFile.atime'
+  | 'frontmatter.heroImageFile.atimeMs'
+  | 'frontmatter.heroImageFile.base'
+  | 'frontmatter.heroImageFile.birthTime'
+  | 'frontmatter.heroImageFile.birthtime'
+  | 'frontmatter.heroImageFile.birthtimeMs'
+  | 'frontmatter.heroImageFile.blksize'
+  | 'frontmatter.heroImageFile.blocks'
+  | 'frontmatter.heroImageFile.changeTime'
+  | 'frontmatter.heroImageFile.childImageSharp.children'
+  | 'frontmatter.heroImageFile.childImageSharp.gatsbyImageData'
+  | 'frontmatter.heroImageFile.childImageSharp.id'
+  | 'frontmatter.heroImageFile.childMdx.body'
+  | 'frontmatter.heroImageFile.childMdx.children'
+  | 'frontmatter.heroImageFile.childMdx.excerpt'
+  | 'frontmatter.heroImageFile.childMdx.fileAbsolutePath'
+  | 'frontmatter.heroImageFile.childMdx.headings'
+  | 'frontmatter.heroImageFile.childMdx.html'
+  | 'frontmatter.heroImageFile.childMdx.id'
+  | 'frontmatter.heroImageFile.childMdx.mdxAST'
+  | 'frontmatter.heroImageFile.childMdx.rawBody'
+  | 'frontmatter.heroImageFile.childMdx.slug'
+  | 'frontmatter.heroImageFile.childMdx.tableOfContents'
+  | 'frontmatter.heroImageFile.childMdx.timeToRead'
+  | 'frontmatter.heroImageFile.children'
+  | 'frontmatter.heroImageFile.childrenImageSharp'
+  | 'frontmatter.heroImageFile.childrenImageSharp.children'
+  | 'frontmatter.heroImageFile.childrenImageSharp.gatsbyImageData'
+  | 'frontmatter.heroImageFile.childrenImageSharp.id'
+  | 'frontmatter.heroImageFile.childrenMdx'
+  | 'frontmatter.heroImageFile.childrenMdx.body'
+  | 'frontmatter.heroImageFile.childrenMdx.children'
+  | 'frontmatter.heroImageFile.childrenMdx.excerpt'
+  | 'frontmatter.heroImageFile.childrenMdx.fileAbsolutePath'
+  | 'frontmatter.heroImageFile.childrenMdx.headings'
+  | 'frontmatter.heroImageFile.childrenMdx.html'
+  | 'frontmatter.heroImageFile.childrenMdx.id'
+  | 'frontmatter.heroImageFile.childrenMdx.mdxAST'
+  | 'frontmatter.heroImageFile.childrenMdx.rawBody'
+  | 'frontmatter.heroImageFile.childrenMdx.slug'
+  | 'frontmatter.heroImageFile.childrenMdx.tableOfContents'
+  | 'frontmatter.heroImageFile.childrenMdx.timeToRead'
+  | 'frontmatter.heroImageFile.children.children'
+  | 'frontmatter.heroImageFile.children.id'
+  | 'frontmatter.heroImageFile.ctime'
+  | 'frontmatter.heroImageFile.ctimeMs'
+  | 'frontmatter.heroImageFile.dev'
+  | 'frontmatter.heroImageFile.dir'
+  | 'frontmatter.heroImageFile.ext'
+  | 'frontmatter.heroImageFile.extension'
+  | 'frontmatter.heroImageFile.gid'
+  | 'frontmatter.heroImageFile.id'
+  | 'frontmatter.heroImageFile.ino'
+  | 'frontmatter.heroImageFile.internal.content'
+  | 'frontmatter.heroImageFile.internal.contentDigest'
+  | 'frontmatter.heroImageFile.internal.description'
+  | 'frontmatter.heroImageFile.internal.fieldOwners'
+  | 'frontmatter.heroImageFile.internal.ignoreType'
+  | 'frontmatter.heroImageFile.internal.mediaType'
+  | 'frontmatter.heroImageFile.internal.owner'
+  | 'frontmatter.heroImageFile.internal.type'
+  | 'frontmatter.heroImageFile.mode'
+  | 'frontmatter.heroImageFile.modifiedTime'
+  | 'frontmatter.heroImageFile.mtime'
+  | 'frontmatter.heroImageFile.mtimeMs'
+  | 'frontmatter.heroImageFile.name'
+  | 'frontmatter.heroImageFile.nlink'
+  | 'frontmatter.heroImageFile.parent.children'
+  | 'frontmatter.heroImageFile.parent.id'
+  | 'frontmatter.heroImageFile.prettySize'
+  | 'frontmatter.heroImageFile.publicURL'
+  | 'frontmatter.heroImageFile.rdev'
+  | 'frontmatter.heroImageFile.relativeDirectory'
+  | 'frontmatter.heroImageFile.relativePath'
+  | 'frontmatter.heroImageFile.root'
+  | 'frontmatter.heroImageFile.size'
+  | 'frontmatter.heroImageFile.sourceInstanceName'
+  | 'frontmatter.heroImageFile.uid'
+  | 'frontmatter.heroImageLink'
+  | 'frontmatter.hidden'
+  | 'frontmatter.tag'
   | 'frontmatter.title'
   | 'id'
   | 'internal.content'
@@ -2107,6 +2206,7 @@ type MdxFieldsEnum =
   | 'frontmatter.heroImageFile.sourceInstanceName'
   | 'frontmatter.heroImageFile.uid'
   | 'frontmatter.heroImageLink'
+  | 'frontmatter.hidden'
   | 'frontmatter.tag'
   | 'frontmatter.title'
   | 'headings'
@@ -2199,6 +2299,7 @@ type MdxFrontmatter = {
   readonly heroImageAlt: Maybe<Scalars['String']>;
   readonly heroImageFile: Maybe<File>;
   readonly heroImageLink: Maybe<Scalars['String']>;
+  readonly hidden: Maybe<Scalars['Boolean']>;
   readonly tag: Maybe<Scalars['String']>;
   readonly title: Scalars['String'];
 };
@@ -2218,6 +2319,7 @@ type MdxFrontmatterFilterInput = {
   readonly heroImageAlt: InputMaybe<StringQueryOperatorInput>;
   readonly heroImageFile: InputMaybe<FileFilterInput>;
   readonly heroImageLink: InputMaybe<StringQueryOperatorInput>;
+  readonly hidden: InputMaybe<BooleanQueryOperatorInput>;
   readonly tag: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
@@ -3868,7 +3970,7 @@ type BlogPostBySlugQueryVariables = Exact<{
 }>;
 
 
-type BlogPostBySlugQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: { readonly name: string | null } | null } | null } | null, readonly mdx: { readonly id: string, readonly excerpt: string, readonly body: string, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null } | null } | null, readonly previous: { readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly next: { readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
+type BlogPostBySlugQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: { readonly name: string | null } | null } | null } | null, readonly mdx: { readonly id: string, readonly excerpt: string, readonly body: string, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly hidden: boolean | null } | null } | null, readonly hidden: { readonly frontmatter: { readonly hidden: boolean | null } | null } | null, readonly previous: { readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly next: { readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
 
 
 }

@@ -9,6 +9,7 @@ import { components } from "../components/Components";
 import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import { StaticImage } from "gatsby-plugin-image";
 import { LastPost } from "../components/LastPost";
+import { Hidden } from "../components/Hidden";
 
 const BlogPostTemplate = ({
   data,
@@ -18,6 +19,22 @@ const BlogPostTemplate = ({
   const siteTitle = data.site?.siteMetadata?.title || `Title`;
   const previous = data.previous as Queries.Mdx;
   const next = data.next as Queries.Mdx;
+  const hidden = data.hidden;
+
+  if (hidden?.frontmatter?.hidden) {
+    return (
+      <Layout location={location} title={siteTitle}>
+        <Container maxW="container.md">
+          <Hidden />
+          <Box mt="8" mb="8" as="hr" />
+          <Grid as="nav" templateColumns="1fr 1fr" gap={12}>
+            <Box>{next && <LastPost post={next} />}</Box>
+            <Box>{previous && <LastPost post={previous} />}</Box>
+          </Grid>
+        </Container>
+      </Layout>
+    );
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -61,16 +78,8 @@ const BlogPostTemplate = ({
           <Box mt="16" mb="8" as="hr" />
         </article>
         <Grid as="nav" templateColumns="1fr 1fr" gap={12}>
-          {previous && (
-            <Box>
-              <LastPost post={previous} />
-            </Box>
-          )}
-          {next && (
-            <Box>
-              <LastPost post={next} />
-            </Box>
-          )}
+          <Box>{next && <LastPost post={next} />}</Box>
+          <Box>{previous && <LastPost post={previous} />}</Box>
         </Grid>
       </Container>
     </Layout>
@@ -93,7 +102,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    mdx(id: { eq: $id }) {
+    mdx(id: { eq: $id }, frontmatter: { hidden: { ne: true } }) {
       id
       excerpt(pruneLength: 160)
       body
@@ -102,8 +111,14 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tag
+        hidden
       }
       timeToRead
+    }
+    hidden: mdx(id: { eq: $id }) {
+      frontmatter {
+        hidden
+      }
     }
     previous: mdx(id: { eq: $previousPostId }) {
       slug
