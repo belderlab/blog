@@ -10,7 +10,6 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 ## TODO
 
 - [ ] Cross Posting from other sources (Just Label)
-- [ ] CI/CD for auto building pages
 - [ ] Add intgration via CI/CD - publish new content in social
   - [ ] Telegram Channel
   - [ ] Twitter
