@@ -62,9 +62,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.nodes;
 
   posts.forEach((post, index) => {
-    if (post.frontmatter.hidden) {
-      return;
-    }
     const { previous, next } = getOtherPost(posts, index);
 
     createPage({
