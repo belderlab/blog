@@ -6,8 +6,9 @@ import Seo from "../components/Seo";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { components } from "../components/Components";
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import { StaticImage } from "gatsby-plugin-image";
+import { LastPost } from "../components/LastPost";
 
 const BlogPostTemplate = ({
   data,
@@ -15,7 +16,8 @@ const BlogPostTemplate = ({
 }: PageProps<Queries.BlogPostBySlugQuery>) => {
   const post = data.mdx;
   const siteTitle = data.site?.siteMetadata?.title || `Title`;
-  const { previous, next } = data;
+  const previous = data.previous as Queries.Mdx;
+  const next = data.next as Queries.Mdx;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -23,65 +25,54 @@ const BlogPostTemplate = ({
         title={post?.frontmatter?.title}
         description={post?.frontmatter?.description || post?.excerpt}
       />
-      <article itemScope itemType="http://schema.org/Article">
-        <Box as="header" mt="14" mb="8">
-          <Flex mb="4">
-            <Box mr="4">
-              <StaticImage
-                src="../images/profile-pic.png"
-                alt=""
-                height={48}
-                style={{
-                  borderRadius: "50%",
-                }}
-                role="none"
-              />
-            </Box>
+      <Container maxW="container.md">
+        <article itemScope itemType="http://schema.org/Article">
+          <Box as="header" mt="14" mb="8">
+            <Flex mb="4">
+              <Box mr="4">
+                <StaticImage
+                  src="../images/profile-pic.png"
+                  alt=""
+                  height={48}
+                  style={{
+                    borderRadius: "50%",
+                  }}
+                  role="none"
+                />
+              </Box>
+              <Box>
+                <Text fontSize="md">
+                  {data.site?.siteMetadata?.author?.name}
+                </Text>
+                <Text>
+                  {post?.frontmatter?.date} · {post?.timeToRead} min read
+                </Text>
+              </Box>
+            </Flex>
+            <Heading as="h1" size="2xl" itemProp="headline">
+              {post?.frontmatter?.title}
+            </Heading>
+          </Box>
+          <MDXProvider components={components}>
+            <section itemProp="articleBody">
+              {post?.body && <MDXRenderer>{post.body}</MDXRenderer>}
+            </section>
+          </MDXProvider>
+          <Box mt="16" mb="8" as="hr" />
+        </article>
+        <Grid as="nav" templateColumns="1fr 1fr" gap={12}>
+          {previous && (
             <Box>
-              <Text fontSize="md">{data.site?.siteMetadata?.author?.name}</Text>
-              <Text>
-                {post?.frontmatter?.date} · {post?.timeToRead} min read
-              </Text>
+              <LastPost post={previous} />
             </Box>
-          </Flex>
-          <Heading as="h1" size="2xl" itemProp="headline">
-            {post?.frontmatter?.title}
-          </Heading>
-        </Box>
-        <MDXProvider components={components}>
-          <section itemProp="articleBody">
-            {post?.body && <MDXRenderer>{post.body}</MDXRenderer>}
-          </section>
-        </MDXProvider>
-        <Box mt="16" mb="8" as="hr" color="red.500" />
-        {/* <footer>Footer</footer> */}
-      </article>
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && previous?.slug && (
-              <Link to={`/${previous?.slug}`} rel="prev">
-                ← {previous?.frontmatter?.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && next?.slug && (
-              <Link to={`/${next?.slug}`} rel="next">
-                {next?.frontmatter?.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+          )}
+          {next && (
+            <Box>
+              <LastPost post={next} />
+            </Box>
+          )}
+        </Grid>
+      </Container>
     </Layout>
   );
 };
@@ -110,6 +101,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tag
       }
       timeToRead
     }
@@ -117,13 +109,31 @@ export const pageQuery = graphql`
       slug
       frontmatter {
         title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        tag
+        heroImageFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
+      timeToRead
     }
     next: mdx(id: { eq: $nextPostId }) {
       slug
       frontmatter {
         title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        tag
+        heroImageFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
+      timeToRead
     }
   }
 `;

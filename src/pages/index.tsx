@@ -40,8 +40,8 @@ const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
 
   return (
     <>
+      <Seo title="All posts" />
       <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
         {favorite && <TopPost post={favorite} />}
         <Box my="16">
           <LastPosts posts={lastThree} />

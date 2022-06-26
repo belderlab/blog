@@ -23,42 +23,59 @@ export function LastPost({ post }: Props) {
   const link = post.slug || "";
 
   return (
-    <>
-      <Link as={RouterLink} to={link}>
-        <Box roundedTop="xl" overflow="hidden">
-          {imgLink && (
-            <Image
-              src={imgLink}
-              alt={post.frontmatter?.heroImageAlt || ""}
-              objectFit="cover"
-              height="200px"
-              w="100%"
-            />
-          )}
-          {!imgLink && imgFile && (
-            <GatsbyImage
-              objectFit="cover"
-              style={{ height: "200px", width: "100%" }}
-              image={imgFile}
-              alt={post.frontmatter?.heroImageAlt || ""}
-            />
-          )}
-        </Box>
-      </Link>
+    <Box
+      sx={{
+        transition: "transform .2s ease",
+        _hover: {
+          transform: "translateY(-4px)",
+        },
+      }}
+      cursor="pointer"
+      position="relative"
+    >
+      <Link
+        as={RouterLink}
+        to={link}
+        position="absolute"
+        top="0"
+        bottom="0"
+        right="0"
+        left="0"
+        zIndex="1"
+      />
+      <Box roundedTop="xl" overflow="hidden">
+        {imgLink && (
+          <Image
+            src={imgLink}
+            alt={post.frontmatter?.heroImageAlt || ""}
+            objectFit="cover"
+            height="200px"
+            w="100%"
+          />
+        )}
+        {!imgLink && imgFile && (
+          <GatsbyImage
+            objectFit="cover"
+            style={{ height: "200px", width: "100%" }}
+            image={imgFile}
+            alt={post.frontmatter?.heroImageAlt || ""}
+          />
+        )}
+      </Box>
       <Box
         bg={color}
         p={8}
         roundedBottom="xl"
         roundedTop={(!imgLink && !imgFile && "xl") || undefined}
       >
-        <Heading as="h3" fontSize="3xl" mb="1">
-          <Link as={RouterLink} to={link}>
-            {post.frontmatter?.title}
-          </Link>
+        <Heading as="h3" fontSize="3xl" mb="3">
+          {post.frontmatter?.title}
         </Heading>
-        <PostInfo post={post} />
+        <Box textDecoration="none">
+          <PostInfo post={post} />
+        </Box>
       </Box>
-    </>
+    </Box>
   );
 }
 // background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );

@@ -36,5 +36,5 @@ export const components = {
       </Box>
     );
   },
-  p: (props: any) => <Text my="2" fontSize="lg" {...props} />,
+  p: (props: any) => <Text my="6" fontSize="lg" {...props} />,
 };

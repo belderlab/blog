@@ -36,7 +36,7 @@ const Layout = ({ location, title, children }: Props) => {
   return (
     <Container maxW="container.xl" data-is-root-path={isRootPath}>
       <Box as="header" mb="12">
-        <Heading as="h1" size="4xl" my="12">
+        <Heading as="h1" textAlign="center" size="4xl" my="12">
           <Link as={GatsbyLink} to="/">
             {title}
           </Link>
