@@ -61,24 +61,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMdx.nodes;
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      if (post.frontmatter.hidden) {
-        return;
-      }
-      const { previous, next } = getOtherPost(posts, index);
+  posts.forEach((post, index) => {
+    if (post.frontmatter.hidden) {
+      return;
+    }
+    const { previous, next } = getOtherPost(posts, index);
 
-      createPage({
-        path: post.slug,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId: previous?.id,
-          nextPostId: next?.id,
-        },
-      });
+    createPage({
+      path: post.slug,
+      component: blogPost,
+      context: {
+        id: post.id,
+        previousPostId: previous?.id,
+        nextPostId: next?.id,
+      },
     });
-  }
+  });
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
