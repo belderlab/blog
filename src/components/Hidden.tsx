@@ -6,7 +6,7 @@ export function Hidden() {
     <Box>
       <Alert status="info">
         <AlertIcon />
-        Статья убрана в черновики...
+        Article hidden in draft...
       </Alert>
     </Box>
   );
