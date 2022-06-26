@@ -9,18 +9,19 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
 ## TODO
 
-- [ ] Cross Posting from other sources
+- [ ] Cross Posting from other sources (Just Label)
+- [ ] CI/CD for auto building pages
 - [ ] Add intgration via CI/CD - publish new content in social
   - [ ] Telegram Channel
   - [ ] Twitter
   - [ ] RSS Mailchimp
 - [ ] Add simple theme configuration
-- [ ] CI/CD for auto building pages
 - [ ] Adaptive layout (Mobile/Tablet)
 - [ ] Add https://github.com/garmeeh/next-seo
 - [ ] Add share buttons https://github.com/nygardk/react-share
 - [ ] Add simple "like" API with nextJS
 - [ ] Twitter integration
+- [ ] Commenting platform
 
 ## Inspiration
 
