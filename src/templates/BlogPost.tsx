@@ -14,12 +14,15 @@ import { Hidden } from "../components/Hidden";
 const BlogPostTemplate = ({
   data,
   location,
+  pageContext,
 }: PageProps<Queries.BlogPostBySlugQuery>) => {
   const post = data.mdx;
   const siteTitle = data.site?.siteMetadata?.title || `Title`;
   const previous = data.previous as Queries.Mdx;
   const next = data.next as Queries.Mdx;
   const hidden = data.hidden;
+
+  console.log({ previous: data.previous, pageContext });
 
   if (hidden?.frontmatter?.hidden) {
     return (
@@ -121,6 +124,7 @@ export const pageQuery = graphql`
       }
     }
     previous: mdx(id: { eq: $previousPostId }) {
+      id
       slug
       frontmatter {
         title
@@ -136,6 +140,7 @@ export const pageQuery = graphql`
       timeToRead
     }
     next: mdx(id: { eq: $nextPostId }) {
+      id
       slug
       frontmatter {
         title
