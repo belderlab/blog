@@ -22,8 +22,6 @@ const BlogPostTemplate = ({
   const next = data.next as Queries.Mdx;
   const hidden = data.hidden;
 
-  console.log({ previous: data.previous, pageContext });
-
   if (hidden?.frontmatter?.hidden) {
     return (
       <Layout location={location} title={siteTitle}>
