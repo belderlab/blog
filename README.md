@@ -22,6 +22,7 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 - [ ] Add simple "like" API with nextJS
 - [ ] Twitter integration
 - [ ] Commenting platform
+- [ ] e2e testing
 
 ## Inspiration
 
