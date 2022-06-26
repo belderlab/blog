@@ -9,6 +9,7 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
 ## TODO
 
+- [ ] Toggle for hidding post
 - [ ] Add Google Metrics / Yandex.Metrics
 - [ ] Cross Posting from other sources (Just Label)
 - [ ] Add intgration via CI/CD - publish new content in social
