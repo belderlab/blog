@@ -66,7 +66,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { hidden: { ne: true } } }
+    ) {
       nodes {
         excerpt
         slug
