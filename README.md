@@ -9,7 +9,9 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 
 ## TODO
 
-- [ ] Add Google Metrics / Yandex.Metrics
+- [ ] Add multiply language switcher
+- [ ] Restyle blog post header
+- [ ] Add photo preview on top
 - [ ] Cross Posting from other sources (Just Label)
 - [ ] Add intgration via CI/CD - publish new content in social
   - [ ] Telegram Channel
