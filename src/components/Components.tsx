@@ -10,6 +10,8 @@ import {
   UnorderedList,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { TinkoffPayment } from "./TinkoffPayment/TinkoffPayment";
+import { Fade } from "./TinkoffPayment/Fade";
 
 export const components = {
   Button,
@@ -37,4 +39,6 @@ export const components = {
     );
   },
   p: (props: any) => <Text my="6" fontSize="lg" {...props} />,
+  TinkoffPayment,
+  Fade,
 };
