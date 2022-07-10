@@ -8,23 +8,7 @@ Build with Gatsby and all docs you can find here: https://www.gatsbyjs.com/docs
 - yarn v2 - [berry](https://yarnpkg.com/getting-started/install)
 
 ## TODO
-
-- [ ] Add multiply language switcher
-- [ ] Restyle blog post header
-- [ ] Add photo preview on top
-- [ ] Cross Posting from other sources (Just Label)
-- [ ] Add intgration via CI/CD - publish new content in social
-  - [ ] Telegram Channel
-  - [ ] Twitter
-  - [ ] RSS Mailchimp
-- [ ] Add simple theme configuration
-- [ ] Adaptive layout (Mobile/Tablet)
-- [ ] Add https://github.com/garmeeh/next-seo
-- [ ] Add share buttons https://github.com/nygardk/react-share
-- [ ] Add simple "like" API with nextJS
-- [ ] Twitter integration
-- [ ] Commenting platform
-- [ ] e2e testing
+Moved https://github.com/fastup-kit/blog/issues/14
 
 ## Inspiration
 
