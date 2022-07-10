@@ -2,15 +2,15 @@ module.exports = {
   graphqlTypegen: true,
   pathPrefix: "/blog",
   siteMetadata: {
-    title: `Blog`,
-    copyright: "DatPayments",
+    title: `Fastup Kit Blog`,
+    copyright: "Fastup Kit",
     author: {
-      name: `DatPayments Technology`,
+      name: `Luchanskii Oleg`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://fastup-kit.github.io/blog/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `luchanso`,
     },
   },
   plugins: [
@@ -50,6 +50,9 @@ module.exports = {
         extensions: [`.mdx`, ".md"],
         JSFrontmatterEngine: true,
         gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {

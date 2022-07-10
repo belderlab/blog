@@ -1,0 +1,67 @@
+---
+title: How to run this blog
+date: "2022-07-10"
+description: "Little note about how to deploy this blog"
+favorite: true
+tag: Basic
+heroImageLink: https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80
+heroImageAlt: "Danist Soh - Construction site birds, unsplash.com/photos/8Gg2Ne_uTcM"
+---
+
+Hi, %username%! In this post you will learn how to install and write your post with Fastup Kit blog engine
+
+This blog builded with stack:
+
+- Frameworks: **Gatsby**, **MDX**
+- Platform: **Github Pages**
+- Deployment: **Github Actions**
+- Package manager: **Yarn 2** aka **Berry**
+- Styling: **Chakra UI**
+
+## Installation
+
+```sh
+git clone git@github.com:fastup-kit/blog.git
+cd blog
+yarn install
+```
+
+Development:
+
+```sh
+yarn start
+```
+
+Push changes on github for automaticle publishing
+
+## Posting
+
+All blog posts located in folder: `content/blog/{blogpost-slug}/*.md(x)` where `blogpost-slug` is blogpost url like `/how-to-run` in your current browser address bar
+
+Each blog post (file) starting with meta information:
+
+```txt
+---
+title: How to run this blog
+date: "2022-07-10"
+description: "Little note about how to deploy this blog"
+favorite: true
+tag: Deployment
+heroImageLink: https://images.unsplash.com/photo....
+heroImageFile: ./hero_image.jpg
+heroImageAlt: "Alt image description"
+---
+```
+
+All parameters optional, and where:
+
+- `title` - post title
+- `date` - publish date (can be useing ISO time)
+- `description` - shorthand description of post
+- `favorite` - this mean post will be in top of your blog, only one post at a time can be favorite
+- `tag` - Little tag
+- `heroImageLink` - thumbnail image link of your post
+- `heroImageFile` - thumbnail file image of your post (image should be in the same folder as post)
+- `heroImageAlt` - description of image
+
+After goes [markdown syntax](https://en.wikipedia.org/wiki/Markdown#Examples). Also can be using [MDX](https://mdxjs.com/) (React Components)
