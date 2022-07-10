@@ -2699,13 +2699,10 @@ type Query_siteArgs = {
   host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
-  jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
   pathPrefix: InputMaybe<StringQueryOperatorInput>;
-  polyfill: InputMaybe<BooleanQueryOperatorInput>;
   port: InputMaybe<IntQueryOperatorInput>;
   siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
-  trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -2811,13 +2808,10 @@ type Site = Node & {
   readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
-  readonly jsxRuntime: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
   readonly pathPrefix: Maybe<Scalars['String']>;
-  readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly port: Maybe<Scalars['Int']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
-  readonly trailingSlash: Maybe<Scalars['String']>;
 };
 
 
@@ -3129,7 +3123,6 @@ type SiteFieldsEnum =
   | 'internal.mediaType'
   | 'internal.owner'
   | 'internal.type'
-  | 'jsxRuntime'
   | 'parent.children'
   | 'parent.children.children'
   | 'parent.children.children.children'
@@ -3169,15 +3162,13 @@ type SiteFieldsEnum =
   | 'parent.parent.parent.children'
   | 'parent.parent.parent.id'
   | 'pathPrefix'
-  | 'polyfill'
   | 'port'
   | 'siteMetadata.author.name'
   | 'siteMetadata.copyright'
   | 'siteMetadata.description'
   | 'siteMetadata.siteUrl'
   | 'siteMetadata.social.twitter'
-  | 'siteMetadata.title'
-  | 'trailingSlash';
+  | 'siteMetadata.title';
 
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
@@ -3186,13 +3177,10 @@ type SiteFilterInput = {
   readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
-  readonly jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly pathPrefix: InputMaybe<StringQueryOperatorInput>;
-  readonly polyfill: InputMaybe<BooleanQueryOperatorInput>;
   readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
-  readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteFunction = Node & {
@@ -4373,7 +4361,7 @@ type BlogPostBySlugQueryVariables = Exact<{
 }>;
 
 
-type BlogPostBySlugQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: { readonly name: string | null } | null } | null } | null, readonly mdx: { readonly id: string, readonly excerpt: string, readonly body: string, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly hidden: boolean | null } | null } | null, readonly hidden: { readonly frontmatter: { readonly hidden: boolean | null } | null } | null, readonly previous: { readonly id: string, readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly next: { readonly id: string, readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
+type BlogPostBySlugQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: { readonly name: string | null } | null } | null } | null, readonly mdx: { readonly id: string, readonly excerpt: string, readonly body: string, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly hidden: boolean | null, readonly heroImageLink: string | null, readonly heroImageAlt: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly hidden: { readonly frontmatter: { readonly hidden: boolean | null } | null } | null, readonly previous: { readonly id: string, readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null, readonly next: { readonly id: string, readonly slug: string | null, readonly timeToRead: number | null, readonly frontmatter: { readonly title: string, readonly date: string | null, readonly description: string | null, readonly tag: string | null, readonly heroImageFile: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
 
 
 }

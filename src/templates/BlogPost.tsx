@@ -6,21 +6,31 @@ import Seo from "../components/Seo";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 import { components } from "../components/Components";
-import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
-import { StaticImage } from "gatsby-plugin-image";
+import {
+  Box,
+  Container,
+  Flex,
+  Grid,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { LastPost } from "../components/LastPost";
 import { Hidden } from "../components/Hidden";
 
 const BlogPostTemplate = ({
   data,
   location,
-  pageContext,
 }: PageProps<Queries.BlogPostBySlugQuery>) => {
   const post = data.mdx;
   const siteTitle = data.site?.siteMetadata?.title || `Title`;
   const previous = data.previous as Queries.Mdx;
   const next = data.next as Queries.Mdx;
   const hidden = data.hidden;
+  const imgLink = post?.frontmatter?.heroImageLink;
+  const imgFile =
+    post?.frontmatter?.heroImageFile?.childImageSharp?.gatsbyImageData;
 
   if (hidden?.frontmatter?.hidden) {
     return (
@@ -71,6 +81,24 @@ const BlogPostTemplate = ({
               {post?.frontmatter?.title}
             </Heading>
           </Box>
+          <Box rounded="xl" overflow="hidden">
+            {imgLink && (
+              <Image
+                src={imgLink}
+                alt={post.frontmatter?.heroImageAlt || ""}
+                objectFit="cover"
+                w="100%"
+              />
+            )}
+            {!imgLink && imgFile && (
+              <GatsbyImage
+                objectFit="cover"
+                style={{ width: "100%" }}
+                image={imgFile}
+                alt={post.frontmatter?.heroImageAlt || ""}
+              />
+            )}
+          </Box>
           <MDXProvider components={components}>
             <section itemProp="articleBody">
               {post?.body && <MDXRenderer>{post.body}</MDXRenderer>}
@@ -113,6 +141,13 @@ export const pageQuery = graphql`
         description
         tag
         hidden
+        heroImageLink
+        heroImageFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        heroImageAlt
       }
       timeToRead
     }
