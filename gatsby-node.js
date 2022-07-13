@@ -95,6 +95,18 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
     }
 
+    type MdxFrontmatter implements Node {
+      title: String
+      description: String
+      date: Date @dateformat
+      favorite: Boolean
+      tag: String
+      heroImageLink: String
+      heroImageFile: File
+      heroImageAlt: String
+      hidden: Boolean
+    }
+
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
       fields: Fields
