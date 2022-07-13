@@ -48,7 +48,7 @@ const BlogIndex = ({ data, location }: PageProps<Queries.Query>) => {
         <Container maxW="container.md">
           <ol style={{ listStyle: `none` }}>
             {posts.map((post) => (
-              <PostListItem post={post} />
+              <PostListItem post={post} key={post.id} />
             ))}
           </ol>
         </Container>
