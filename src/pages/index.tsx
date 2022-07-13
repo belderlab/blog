@@ -71,6 +71,7 @@ export const pageQuery = graphql`
       filter: { frontmatter: { hidden: { ne: true } } }
     ) {
       nodes {
+        id
         excerpt
         slug
         frontmatter {
