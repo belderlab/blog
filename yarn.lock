@@ -1784,7 +1784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/gatsby-plugin@npm:^3.0.1":
+"@chakra-ui/gatsby-plugin@npm:3.0.1":
   version: 3.0.1
   resolution: "@chakra-ui/gatsby-plugin@npm:3.0.1"
   peerDependencies:
@@ -2071,7 +2071,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/react@npm:^2.2.1":
+"@chakra-ui/react@npm:2.2.1":
   version: 2.2.1
   resolution: "@chakra-ui/react@npm:2.2.1"
   dependencies:
@@ -2480,7 +2480,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.9.3":
+"@emotion/react@npm:11.9.3":
   version: 11.9.3
   resolution: "@emotion/react@npm:11.9.3"
   dependencies:
@@ -2523,7 +2523,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.9.3":
+"@emotion/styled@npm:11.9.3":
   version: 11.9.3
   resolution: "@emotion/styled@npm:11.9.3"
   dependencies:
@@ -3683,7 +3683,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/mdx@npm:^1.6.22":
+"@mdx-js/mdx@npm:1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/mdx@npm:1.6.22"
   dependencies:
@@ -3710,7 +3710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:^1.6.22":
+"@mdx-js/react@npm:1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/react@npm:1.6.22"
   peerDependencies:
@@ -4621,7 +4621,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mdx-js__react@npm:^1.5.5":
+"@types/mdx-js__react@npm:1.5.5":
   version: 1.5.5
   resolution: "@types/mdx-js__react@npm:1.5.5"
   dependencies:
@@ -4705,7 +4705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/reach__router@npm:^1.3.10":
+"@types/reach__router@npm:1.3.10, @types/reach__router@npm:^1.3.10":
   version: 1.3.10
   resolution: "@types/reach__router@npm:1.3.10"
   dependencies:
@@ -4714,7 +4714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-helmet@npm:^6.1.5":
+"@types/react-helmet@npm:6.1.5":
   version: 6.1.5
   resolution: "@types/react-helmet@npm:6.1.5"
   dependencies:
@@ -4734,7 +4734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.14":
+"@types/react@npm:18.0.14":
   version: 18.0.14
   resolution: "@types/react@npm:18.0.14"
   dependencies:
@@ -9150,7 +9150,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^6.3.11":
+"framer-motion@npm:6.3.11":
   version: 6.3.11
   resolution: "framer-motion@npm:6.3.11"
   dependencies:
@@ -9496,7 +9496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-feed@npm:^4.16.0":
+"gatsby-plugin-feed@npm:4.16.0":
   version: 4.16.0
   resolution: "gatsby-plugin-feed@npm:4.16.0"
   dependencies:
@@ -9515,7 +9515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-image@npm:^2.16.1":
+"gatsby-plugin-image@npm:2.16.1":
   version: 2.16.1
   resolution: "gatsby-plugin-image@npm:2.16.1"
   dependencies:
@@ -9544,7 +9544,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-manifest@npm:^4.16.0":
+"gatsby-plugin-manifest@npm:4.16.0":
   version: 4.16.0
   resolution: "gatsby-plugin-manifest@npm:4.16.0"
   dependencies:
@@ -9632,7 +9632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-react-helmet@npm:^5.16.0":
+"gatsby-plugin-react-helmet@npm:5.16.0":
   version: 5.16.0
   resolution: "gatsby-plugin-react-helmet@npm:5.16.0"
   dependencies:
@@ -9644,7 +9644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-sharp@npm:^4.16.1":
+"gatsby-plugin-sharp@npm:4.16.1":
   version: 4.16.1
   resolution: "gatsby-plugin-sharp@npm:4.16.1"
   dependencies:
@@ -9724,7 +9724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-images-zoom@npm:^1.1.0":
+"gatsby-remark-images-zoom@npm:1.1.0":
   version: 1.1.0
   resolution: "gatsby-remark-images-zoom@npm:1.1.0"
   dependencies:
@@ -9736,7 +9736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-images@npm:^6.16.0":
+"gatsby-remark-images@npm:6.16.0":
   version: 6.16.0
   resolution: "gatsby-remark-images@npm:6.16.0"
   dependencies:
@@ -9758,7 +9758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-prismjs@npm:^6.18.0":
+"gatsby-remark-prismjs@npm:6.18.0":
   version: 6.18.0
   resolution: "gatsby-remark-prismjs@npm:6.18.0"
   dependencies:
@@ -9772,7 +9772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-responsive-iframe@npm:^5.16.0":
+"gatsby-remark-responsive-iframe@npm:5.16.0":
   version: 5.16.0
   resolution: "gatsby-remark-responsive-iframe@npm:5.16.0"
   dependencies:
@@ -9807,7 +9807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-source-filesystem@npm:^4.16.0":
+"gatsby-source-filesystem@npm:4.16.0":
   version: 4.16.0
   resolution: "gatsby-source-filesystem@npm:4.16.0"
   dependencies:
@@ -9833,39 +9833,39 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gatsby-starter-blog@workspace:."
   dependencies:
-    "@chakra-ui/gatsby-plugin": ^3.0.1
-    "@chakra-ui/react": ^2.2.1
-    "@emotion/react": ^11.9.3
-    "@emotion/styled": ^11.9.3
-    "@mdx-js/mdx": ^1.6.22
-    "@mdx-js/react": ^1.6.22
-    "@types/mdx-js__react": ^1.5.5
-    "@types/reach__router": ^1.3.10
-    "@types/react": ^18.0.14
-    "@types/react-helmet": ^6.1.5
-    framer-motion: ^6.3.11
-    gatsby: ^4.16.0
-    gatsby-plugin-feed: ^4.16.0
-    gatsby-plugin-image: ^2.16.1
-    gatsby-plugin-manifest: ^4.16.0
+    "@chakra-ui/gatsby-plugin": 3.0.1
+    "@chakra-ui/react": 2.2.1
+    "@emotion/react": 11.9.3
+    "@emotion/styled": 11.9.3
+    "@mdx-js/mdx": 1.6.22
+    "@mdx-js/react": 1.6.22
+    "@types/mdx-js__react": 1.5.5
+    "@types/reach__router": 1.3.10
+    "@types/react": 18.0.14
+    "@types/react-helmet": 6.1.5
+    framer-motion: 6.3.11
+    gatsby: 4.16.0
+    gatsby-plugin-feed: 4.16.0
+    gatsby-plugin-image: 2.16.1
+    gatsby-plugin-manifest: 4.16.0
     gatsby-plugin-mdx: 3.18.0-next.0
-    gatsby-plugin-react-helmet: ^5.16.0
-    gatsby-plugin-sharp: ^4.16.1
-    gatsby-remark-images: ^6.16.0
-    gatsby-remark-images-zoom: ^1.1.0
-    gatsby-remark-prismjs: ^6.18.0
-    gatsby-remark-responsive-iframe: ^5.16.0
-    gatsby-source-filesystem: ^4.16.0
-    gatsby-transformer-remark: ^5.16.0
-    gatsby-transformer-sharp: ^4.16.0
-    gh-pages: ^4.0.0
-    prettier: ^2.6.2
-    prism-themes: ^1.9.0
-    prismjs: ^1.28.0
-    react: ^18.1.0
-    react-dom: ^18.1.0
-    react-helmet: ^6.1.0
-    typescript: ^4.7.3
+    gatsby-plugin-react-helmet: 5.16.0
+    gatsby-plugin-sharp: 4.16.1
+    gatsby-remark-images: 6.16.0
+    gatsby-remark-images-zoom: 1.1.0
+    gatsby-remark-prismjs: 6.18.0
+    gatsby-remark-responsive-iframe: 5.16.0
+    gatsby-source-filesystem: 4.16.0
+    gatsby-transformer-remark: 5.16.0
+    gatsby-transformer-sharp: 4.16.0
+    gh-pages: 4.0.0
+    prettier: 2.6.2
+    prism-themes: 1.9.0
+    prismjs: 1.28.0
+    react: 18.1.0
+    react-dom: 18.1.0
+    react-helmet: 6.1.0
+    typescript: 4.7.3
   languageName: unknown
   linkType: soft
 
@@ -9890,7 +9890,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-remark@npm:^5.16.0":
+"gatsby-transformer-remark@npm:5.16.0":
   version: 5.16.0
   resolution: "gatsby-transformer-remark@npm:5.16.0"
   dependencies:
@@ -9922,7 +9922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-sharp@npm:^4.16.0":
+"gatsby-transformer-sharp@npm:4.16.0":
   version: 4.16.0
   resolution: "gatsby-transformer-sharp@npm:4.16.0"
   dependencies:
@@ -9952,7 +9952,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby@npm:^4.16.0":
+"gatsby@npm:4.16.0":
   version: 4.16.0
   resolution: "gatsby@npm:4.16.0"
   dependencies:
@@ -10221,7 +10221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gh-pages@npm:^4.0.0":
+"gh-pages@npm:4.0.0":
   version: 4.0.0
   resolution: "gh-pages@npm:4.0.0"
   dependencies:
@@ -15039,7 +15039,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.6.2":
+"prettier@npm:2.6.2":
   version: 2.6.2
   resolution: "prettier@npm:2.6.2"
   bin:
@@ -15065,14 +15065,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prism-themes@npm:^1.9.0":
+"prism-themes@npm:1.9.0":
   version: 1.9.0
   resolution: "prism-themes@npm:1.9.0"
   checksum: ddbadb8d83fc23e428409d7dd1d62dde6033a3afabd721d292e2d251f5693e3eccb7f9641704374f3df3dde59c0e2c8a3c069a7aa72990c4a00acb57f2af81f8
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.28.0":
+"prismjs@npm:1.28.0":
   version: 1.28.0
   resolution: "prismjs@npm:1.28.0"
   checksum: bde93fb2beb45b7243219fc53855f59ee54b3fa179f315e8f9d66244d756ef984462e10561bbdc6713d3d7e051852472d7c284f5794a8791eeaefea2fb910b16
@@ -15397,7 +15397,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.1.0":
+"react-dom@npm:18.1.0":
   version: 18.1.0
   resolution: "react-dom@npm:18.1.0"
   dependencies:
@@ -15450,7 +15450,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-helmet@npm:^6.1.0":
+"react-helmet@npm:6.1.0":
   version: 6.1.0
   resolution: "react-helmet@npm:6.1.0"
   dependencies:
@@ -15546,7 +15546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.1.0":
+"react@npm:18.1.0":
   version: 18.1.0
   resolution: "react@npm:18.1.0"
   dependencies:
@@ -17759,7 +17759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.3":
+"typescript@npm:4.7.3":
   version: 4.7.3
   resolution: "typescript@npm:4.7.3"
   bin:
@@ -17769,7 +17769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.7.3#~builtin<compat/typescript>":
   version: 4.7.3
   resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"
   bin:
