@@ -41,6 +41,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
+          path: ./public
       - name: "ls -al"
         run: ls -al
       - name: "Echo"
