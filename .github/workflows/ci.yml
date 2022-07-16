@@ -28,6 +28,7 @@ jobs:
         run: yarn run build
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: "ls -al"
         run: ls -al
