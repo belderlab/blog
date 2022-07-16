@@ -26,3 +26,11 @@ jobs:
 
       - name: Build page
         run: yarn run build
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "ls -al"
+        run: ls -al
+      - name: "Echo"
+        run: echo "hello world"
+  
