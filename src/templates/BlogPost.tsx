@@ -164,6 +164,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tag
+        heroImageLink
         heroImageFile {
           childImageSharp {
             gatsbyImageData
@@ -180,6 +181,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tag
+        heroImageLink
         heroImageFile {
           childImageSharp {
             gatsbyImageData
