@@ -102,7 +102,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       favorite: Boolean
       tag: String
       heroImageLink: String
-      heroImageFile: File
+      heroImageFile: File @fileByRelativePath
       heroImageAlt: String
       hidden: Boolean
     }
