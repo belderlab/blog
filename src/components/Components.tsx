@@ -32,13 +32,22 @@ export const components = {
   a: (props: any) => <Link {...props} color="blue.400" />,
   blockquote: (props: any) => {
     const color = useColorModeValue("blackAlpha.400", "whiteAlpha.400");
+
     return (
-      <Box p="4" my="4" borderLeft="4px solid" borderLeftColor={color}>
-        <Text my="-2" {...props} />
+      <Box
+        p="4"
+        my="4"
+        borderLeft="4px solid"
+        borderLeftColor={color}
+        data-testid="quote"
+      >
+        <Box my="-4">{props.children}</Box>
       </Box>
     );
   },
-  p: (props: any) => <Text my="6" fontSize="lg" {...props} />,
+  p: (props: any) => (
+    <Text data-testid="text" my="4" fontSize="lg" {...props} />
+  ),
   TinkoffPayment,
   Fade,
 };
