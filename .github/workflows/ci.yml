@@ -22,7 +22,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-v1
 
       - name: Install Packages
-        run: yarn install
+        run: yarn install --immutable --immutable-cache --check-cache
 
       - name: Build page
         run: yarn run build
