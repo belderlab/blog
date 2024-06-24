@@ -26,3 +26,20 @@ jobs:
 
       - name: Build page
         run: yarn run build
+        
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: ./public
+          retention-days: 1
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Downdload Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: ./public
+  
